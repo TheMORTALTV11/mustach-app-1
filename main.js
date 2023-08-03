@@ -1,5 +1,7 @@
+nosex=0;
+nosey=0;
 function preload(){
-
+img=loadImage('https://i.postimg.cc/7ZtKmLB9/mustache-student-math-favorite-for-friday-the-the-1.png');
 
 }
 function setup(){
@@ -17,6 +19,8 @@ if(results.length>0)
     console.log(results);
     console.log("nose x="+results[0].pose.nose.x);
     console.log("nose y="+results[0].pose.nose.y);
+    nosex=results[0].pose.nose.x;
+    nosey=results[0].pose.nose.y;
 }
 }
 function modelLoaded(){
@@ -24,7 +28,7 @@ function modelLoaded(){
 }
 function draw(){
 image(video,0,0,300,300);
-
+image(img,nosex-40 ,nosey-5,80,40);
 }
 function take_snapshot(){
     save('myFilterImage.png');
